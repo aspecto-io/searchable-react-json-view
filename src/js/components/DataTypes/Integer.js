@@ -1,5 +1,6 @@
 import React from 'react';
 import DataTypeLabel from './DataTypeLabel';
+import splitAndPushByDelimiter from './../../helpers/splitAndPushByDelimiter';
 
 //theme
 import Theme from './../../themes/getStyle';
@@ -9,10 +10,26 @@ export default class extends React.PureComponent {
     render() {
         const type_name = 'int';
         const {props} = this;
-        return (
-            <div {...Theme(props.theme, 'integer')}>
+        const {value, theme, highlightSearch, highlightSearchColor} = props;
+
+        if (highlightSearch && String(value).includes(highlightSearch)) {
+            return <div {...Theme(theme, 'integer')}>
                 <DataTypeLabel type_name={type_name} {...props} />
-                {this.props.value}
+                {splitAndPushByDelimiter(String(value), highlightSearch).map((digit, i) => [
+                    <span
+                        key={i}
+                        style={{backgroundColor: i%2 === 1 ? highlightSearchColor : 'transparent'}}
+                    >
+                        {digit}
+                    </span>
+                ])}
+            </div>
+        }
+
+        return (
+            <div {...Theme(theme, 'integer')}>
+                <DataTypeLabel type_name={type_name} {...props} />
+                {value}
             </div>
         );
     }
