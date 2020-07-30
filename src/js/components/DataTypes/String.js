@@ -43,8 +43,7 @@ export default class extends React.PureComponent {
         let collapsible = toType(collapseStringsAfterLength) === 'integer';
         let style = { style: { cursor: 'default' } };
 
-        if (props.highlightSearch && value.indexOf(props.highlightSearch) > -1) {
-
+        if (props.highlightSearch && value.toLowerCase().includes(props.highlightSearch.toLowerCase())) {
             return <div {...Theme(theme, 'string')}>
                 <DataTypeLabel type_name={type_name} {...props} />
                 "{splitAndPushByDelimiter(value, props.highlightSearch).map((word, i) => [

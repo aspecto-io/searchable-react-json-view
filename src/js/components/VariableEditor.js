@@ -78,8 +78,7 @@ class VariableEditor extends React.PureComponent {
                     <span>
                         <span {...Theme(theme, 'object-name')} class='object-key' key={variable.name + '_' + namespace}>
                             <span style={{ verticalAlign: 'top' }}>"</span>
-                            {highlightSearch && variable.name.includes(highlightSearch) ? (
-                                splitAndPushByDelimiter(variable.name, highlightSearch).map((word, i) => (
+                            {splitAndPushByDelimiter(variable.name, highlightSearch).map((word, i) => (
                                     <span
                                         key={i}
                                         style={{
@@ -89,10 +88,7 @@ class VariableEditor extends React.PureComponent {
                                     >
                                         {word}
                                     </span>
-                                ))
-                            ) : (
-                                <span style={{ display: 'inline-block' }}>{variable.name}</span>
-                            )}
+                            ))}
                             <span style={{ verticalAlign: 'top' }}>"</span>
                         </span>
                         <span {...Theme(theme, 'colon')}>:</span>

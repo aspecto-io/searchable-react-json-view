@@ -13,26 +13,17 @@ export default class extends React.PureComponent {
         const {props} = this;
         const {value, theme, highlightSearch, highlightSearchColor} = props;
 
-        if (highlightSearch && String(value).includes(highlightSearch)) {
-            return <div {...Theme(theme, 'boolean')}>
-                <DataTypeLabel type_name={type_name} {...props} />
-                {splitAndPushByDelimiter(String(value), highlightSearch).map((digit, i) => [
-                    <span
-                        key={i}
-                        style={{backgroundColor: i%2 === 1 ? highlightSearchColor : 'transparent'}}
-                    >
-                        {digit}
-                    </span>
-                ])}
-            </div>
-        }
-
-        return (
-            <div {...Theme(theme, 'boolean')}>
-                <DataTypeLabel type_name={type_name} {...props} />
-                {value ? 'true' : 'false'}
-            </div>
-        );
+        return <div {...Theme(theme, 'boolean')}>
+            <DataTypeLabel type_name={type_name} {...props} />
+            {splitAndPushByDelimiter(String(value), highlightSearch).map((digit, i) => [
+                <span
+                    key={i}
+                    style={{backgroundColor: i%2 === 1 ? highlightSearchColor : 'transparent'}}
+                >
+                    {digit}
+                </span>
+            ])}
+        </div>
     }
 
 }

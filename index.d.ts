@@ -135,6 +135,10 @@ export interface ReactJsonViewProps {
    * Default: null
    */
   defaultValue?: TypeDefaultValue | TypeDefaultValue[] | null;
+
+  highlightSearch?: string;
+  highlightSearchColor?: string;
+  highlightCurrentSearchColor?: string;
 }
 
 export interface OnCopyProps {

@@ -21,8 +21,7 @@ export default function getObjectName(props) {
             <span {...Theme(theme, 'object-name')} key={namespace}>
                 <span class='object-key'>
                     <span style={{ verticalAlign: 'top' }}>"</span>
-                    {highlightSearch && display_name.includes(highlightSearch) ? (
-                        splitAndPushByDelimiter(display_name, highlightSearch).map((word, i) => (
+                    {splitAndPushByDelimiter(display_name, highlightSearch).map((word, i) => (
                             <span
                                 key={i}
                                 style={{
@@ -32,9 +31,7 @@ export default function getObjectName(props) {
                                 {word}
                             </span>
                         ))
-                    ) : (
-                        <span>{display_name}</span>
-                    )}
+                    }
                     <span style={{ verticalAlign: 'top' }}>"</span>
                 </span>
                 <span {...Theme(theme, 'colon')}>:</span>

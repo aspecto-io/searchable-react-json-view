@@ -10,7 +10,7 @@ import Moment from "moment"
 import JsonViewer from "./../../src/js/index"
 
 const App = () => {
-    const [search, setSearch] = React.useState('42')
+    const [search, setSearch] = React.useState('IS A')
 
     return <div>
         Search: <input value={search} onChange={e => setSearch(e.target.value)} />
