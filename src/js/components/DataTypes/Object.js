@@ -187,6 +187,8 @@ class RjvObject extends React.PureComponent {
         } = this.props;
 
         const { object_type, expanded } = this.state;
+        const objectContainingSearch = rest.highlightSearch && 
+            JSON.stringify(src).toLowerCase().includes(rest.highlightSearch.toLowerCase());
 
         let styles = {};
         if (!jsvRoot && parent_type !== 'array_group') {
@@ -202,7 +204,7 @@ class RjvObject extends React.PureComponent {
                 {...Theme(theme, jsvRoot ? 'jsv-root' : 'objectKeyVal', styles)}
             >
                 {this.getBraceStart(object_type, expanded)}
-                {expanded
+                {expanded || objectContainingSearch
                     ? this.getObjectContent(depth, src, {
                         theme,
                         iconStyle,

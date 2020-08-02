@@ -76,17 +76,19 @@ function getExampleJson1() {
             sibling1: true,
             sibling2: false,
             sibling3: null,
-            isString: value => {
-                if (typeof value === "string") {
-                    return "string"
-                } else {
-                    return "other"
-                }
-            }
         },
         string_number: "1234",
+        moment: {
+            a: 'shlomi',
+            b: 'nir',
+            c: {
+                name: 'amir',
+                d: [{
+                    name: 'michael eran'
+                }]
+            }
+        },
         date: new Date(),
-        moment: Moment(),
         regexp: /[0-9]/gi
     }
 }

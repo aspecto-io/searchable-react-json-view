@@ -41,7 +41,7 @@ export default class extends React.PureComponent {
         const { collapseStringsAfterLength, theme } = props;
         let { value } = props;
         let collapsible = toType(collapseStringsAfterLength) === 'integer';
-        let style = { style: { cursor: 'default' } };
+        let style = { cursor: 'default' };
 
         if (props.highlightSearch && value.toLowerCase().includes(props.highlightSearch.toLowerCase())) {
             return <div {...Theme(theme, 'string')}>
@@ -50,8 +50,7 @@ export default class extends React.PureComponent {
                     <span
                         key={i}
                         class="string-value"
-                        {...style}
-                        style={{backgroundColor: i%2 === 1 ? props.highlightSearchColor : 'transparent'}}
+                        style={{backgroundColor: i%2 === 1 ? props.highlightSearchColor : 'transparent', ...style}}
                         onClick={this.toggleCollapsed}
                     >
                         {word}
@@ -61,7 +60,7 @@ export default class extends React.PureComponent {
         }
 
         if (collapsible && value.length > collapseStringsAfterLength) {
-            style.style.cursor = 'pointer';
+            style.cursor = 'pointer';
             if (this.state.collapsed) {
                 value = (
                     <span>
@@ -77,7 +76,7 @@ export default class extends React.PureComponent {
                 <DataTypeLabel type_name={type_name} {...props} />
                 <span
                     class="string-value"
-                    {...style}
+                    style={style}
                     onClick={this.toggleCollapsed}
                 >
                     "{value}"
