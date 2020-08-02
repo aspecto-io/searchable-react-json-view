@@ -15,12 +15,12 @@ export default class extends React.PureComponent {
 
         return <div {...Theme(theme, 'boolean')}>
             <DataTypeLabel type_name={type_name} {...props} />
-            {splitAndPushByDelimiter(String(value), highlightSearch).map((digit, i) => [
+            {splitAndPushByDelimiter(String(value), highlightSearch).map((char, i) => [
                 <span
                     key={i}
                     style={{backgroundColor: i%2 === 1 ? highlightSearchColor : 'transparent'}}
                 >
-                    {digit}
+                    {char}
                 </span>
             ])}
         </div>
