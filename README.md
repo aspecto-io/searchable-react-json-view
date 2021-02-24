@@ -17,7 +17,7 @@ Name|Type|Default|Description
 `highlightCurrentSearchColor`|`string`| <img src="https://user-images.githubusercontent.com/16322616/89119031-ac1c6d00-d4b3-11ea-9640-e5320904fdd3.png"/> | Current highlight color
 `customCopiedIcon`|`JSX.Element`| null | Custom icon that appears after copying
 `customCopyIcon`|`JSX.Element`| null | Custom icon for copy to clipboard
-`customActions`|`array`| [] | Custom actions that appear after copy, edit etc. each item should be: { icon: JSX.Element, onClick: clickedObj => void } 
+`customActions`|`array`| [] | Custom actions that appear after copy, edit etc. each item should be: { icon: JSX.Element, onClick: clickedJsonValue => void } 
 
 ### Example
 
