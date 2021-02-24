@@ -11,7 +11,6 @@ import Theme from './../themes/getStyle';
 
 export default class extends React.PureComponent {
     constructor(props) {
-        console.log('customCopyIcon', props.customCopyIcon)
         super(props);
         this.state = {
             copied: false
