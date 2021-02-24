@@ -12,6 +12,10 @@
     .click-to-edit {
         display: none;
     }
+    .custom-action {
+        cursor: pointer;
+        display: none;
+    }
 
     .object-key-val {
         &:hover > span > .object-meta-data {
@@ -40,6 +44,9 @@
             display: inline-block;
         }
         &:hover .click-to-edit {
+            display: inline-block;
+        }
+        &:hover .custom-action {
             display: inline-block;
         }
     }

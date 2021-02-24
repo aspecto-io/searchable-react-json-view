@@ -58,6 +58,9 @@ class VariableEditor extends React.PureComponent {
             highlightSearch,
             highlightSearchColor,
             rjvId,
+            customCopyIcon,
+            customCopiedIcon,
+            customActions = []
         } = this.props;
         const { editMode } = this.state;
 
@@ -120,6 +123,8 @@ class VariableEditor extends React.PureComponent {
                 </div>
                 {enableClipboard ? (
                     <CopyToClipboard
+                        customCopiedIcon={customCopiedIcon}
+                        customCopyIcon={customCopyIcon}
                         hidden={editMode}
                         src={variable.value}
                         clickCallback={enableClipboard}
@@ -128,6 +133,11 @@ class VariableEditor extends React.PureComponent {
                 ) : null}
                 {onEdit !== false && editMode == false ? this.getEditIcon() : null}
                 {onDelete !== false && editMode == false ? this.getRemoveIcon() : null}
+                {customActions.map(({ icon, onClick }) => (
+                    <span onClick={() => onClick(variable)} className="custom-action">
+                        {icon}
+                    </span>
+                ))}
             </div>
         );
     }

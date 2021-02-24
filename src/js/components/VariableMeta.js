@@ -108,7 +108,9 @@ export default class extends React.PureComponent {
             onAdd,
             enableClipboard,
             src,
-            namespace
+            namespace,
+            customCopyIcon,
+            customCopiedIcon
         } = this.props;
         return (
             <div
@@ -123,6 +125,8 @@ export default class extends React.PureComponent {
                 {/* copy to clipboard icon */}
                 {enableClipboard
                     ? (<CopyToClipboard
+                        customCopiedIcon={customCopiedIcon}
+                        customCopyIcon={customCopyIcon}
                         clickCallback={enableClipboard}
                         {...{src, theme, namespace}} />)
                     : null

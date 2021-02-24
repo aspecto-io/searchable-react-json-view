@@ -139,6 +139,9 @@ export interface ReactJsonViewProps {
   highlightSearch?: string;
   highlightSearchColor?: string;
   highlightCurrentSearchColor?: string;
+  customCopiedIcon?: object;
+  customCopyIcon?: object;
+  customActions?: Array<object>;
 }
 
 export interface OnCopyProps {
