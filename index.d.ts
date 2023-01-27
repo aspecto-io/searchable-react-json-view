@@ -276,6 +276,7 @@ export type ThemeKeys =
   | 'pop'
   | 'railscasts'
   | 'rjv-default'
+  | 'rjv_white'
   | 'shapeshifter'
   | 'shapeshifter:inverted'
   | 'solarized'

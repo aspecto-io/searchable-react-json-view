@@ -1,4 +1,4 @@
-import { rjv_default, rjv_grey } from './base16/rjv-themes';
+import { rjv_default, rjv_grey, rjv_white } from './base16/rjv-themes';
 import constants from './styleConstants';
 import { createStyling } from 'react-base16-styling';
 
@@ -189,6 +189,10 @@ const getDefaultThemeStyling = theme => {
         string: {
             display: 'inline-block',
             color: colors.dataTypes.string
+        },
+        link: {
+            display: 'inline-block',
+            color: '#6d9af3'
         },
         nan: {
             display: 'inline-block',
@@ -394,6 +398,8 @@ const getStyle = theme => {
     let rjv_theme = rjv_default;
     if (theme === false || theme === 'none') {
         rjv_theme = rjv_grey;
+    } else if (theme === "rjv_white") {
+        rjv_theme = rjv_white;
     }
 
     return createStyling(getDefaultThemeStyling, { defaultBase16: rjv_theme })(

@@ -88,7 +88,7 @@ export class ArrowRight extends React.PureComponent {
         return (
             <span {...rest}>
                 <svg
-                    style={{...getIconStyle(style).style, paddingLeft: '2px', verticalAlign: 'top'}}
+                    style={{...getIconStyle(style).style, paddingLeft: '2px', verticalAlign: 'top', position: 'relative', top: '2px'}}
                     viewBox="0 0 15 15"
                     fill="currentColor"
                 >
@@ -107,7 +107,7 @@ export class ArrowDown extends React.PureComponent {
         return (
             <span {...rest}>
                 <svg
-                    style={{...getIconStyle(style).style, paddingLeft: '2px', verticalAlign: 'top'}}
+                    style={{...getIconStyle(style).style, paddingLeft: '2px', verticalAlign: 'top', position: 'relative', top: '2px'}}
                     viewBox="0 0 15 15"
                     fill="currentColor"
                 >
